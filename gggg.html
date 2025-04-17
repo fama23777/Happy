@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عيد ميلاد سعيد يا منة! 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to top right, #ffe0f0, #fffaf0);
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      color: #d63384;
+      margin-top: 50px;
+      font-size: 3rem;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+    p {
+      font-size: 1.5rem;
+      color: #555;
+      margin: 20px auto;
+      max-width: 500px;
+    }
+    .song-lyrics {
+      font-size: 1.2rem;
+      color: #6a1b9a;
+      margin: 40px 0;
+      line-height: 1.6;
+      font-weight: bold;
+      animation: fadeIn 5s ease-in-out infinite;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 5s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        bottom: 0;
+        opacity: 1;
+      }
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+      }
+    }
+    @keyframes pop {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>عيد ميلاد سعيد يا لولو 🎂!</h1>
+  <p>يا أجمل من شافت عيني 💖، في يومك الحلو ده، حبيت أقولك إنك مميزة جدًا، وفرحتك بالدنيا وما فيها. كل سنة وانتي طيبة ودايمًا مبتسمة 🌟</p>
+
+  <!-- كلمات الأغنية -->
+  <div class="song-lyrics">
+    <p>🎶 الاء يا أغلى من الورد والشمعة،</p>
+    <p>في عيد ميلادك تفتح الزهور،</p>
+    <p>كل سنة وأنتِ في قلبي،</p>
+    <p>وعيد ميلادك دايمًا بالسرور.</p>
+    <p>🎵 يا لولو، يا ضوء العين،</p>
+    <p>أنتِ الحلم اللي مالوش نهاية،</p>
+    <p>في يومك السعيد ده أقول لك،</p>
+    <p>كل سنة وأنتِ في أعلى مكانة! 🎉</p>
+  </div>
+
+  <script>
+    // قلوب بتطير 💕
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
